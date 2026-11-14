@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Heritage Solution | Web developer and graphic designer</title>
+  <meta name="description" content="Portfolio of Heritage Solution, web developer and graphic designer, founder of Heritage Solution.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- TODO: add your icon file, then uncomment -->
+  <!-- <link rel="icon" href="images/icon.png"> -->
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="#home" class="brand">
+      <img src="logo.png" alt="Heritage Solution Logo"
+      Heritage Solution
+    </a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false">Menu</button>
+    <nav class="nav" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#cv">CV</a>
+      <a href="#contact" class="nav-cta">Contact me</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="bg-shapes" aria-hidden="true">
+  <span></span><span></span><span></span><span></span><span></span>
+      <div class="hero-text">
+        <h1>I design digital experiences and build<br>modern websites.</h1>
+        <p>I'm Samson Oluwajuwonlo Oyebode, a web developer and graphic designer. Through Heritage Solution,I help individuals and businesses turn ideas into effective digital experiences.</p>
+        <div class="actions">
+          <a href="#work" class="btn btn-gold">See my work</a>
+          <a href="#contact" class="btn btn-line">Get in touch</a>
+        </div>
+      </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="tile tile-silver"><span>H</span></div>
+        <div class="tile tile-navy"><span>S</span></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="wrap two-col">
+        <div class="photo">
+          <img src="profile pic.jpg" alt="Profile photo">
+        </div>
+        <div>
+          <h2>About me</h2>
+          <!-- TODO: replace with your own words -->
+          <p>I'm a Software and Web Development student at Federal Polytechnic Ado-Ekiti, Nigeria. I build websites and apps, and I design brands that look good and work well.</p>
+          <p>I started Heritage Solution to help people and small businesses get a professional presence online. I'm now working on projects that solve real problems around me, from farm management to student housing.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section alt">
+      <div class="wrap">
+        <h2>Skills</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Web development</h3>
+            <p>HTML, CSS, JavaScript, and building with APIs.</p>
+          </div>
+          <div class="card">
+            <h3>Graphic design</h3>
+            <p>Mobile graphics designer</p>
+            <p>Logos, brand identity, flyers and social media graphics.</p>
+          </div>
+          <div class="card">
+            <h3>Data and programming</h3>
+            <p>Python and R for analysis.</p>
+          </div>
+          <div class="card">
+            <h3>AI Trainer</h3>
+            <p>Training and fine-tuning AI models for various applications.</p>
+            <p>Data annotation and AI model training (currently developing this skill).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section id="work" class="section">
+      <div class="wrap">
+        <h2>Selected work</h2>
+        <p class="lead">Graphics and projects I've built.</p>
+        <div class="gallery">
+          <figure class="work"><div class="thumb"><img src="branding.png" alt="Project image"></div><figcaption>Heritage Solution brand identity</figcaption></figure>
+          <figure class="work"><div class="thumb"><img src="full branding.png" alt="Project image"></div><figcaption>Branding</figcaption></figure>
+          <figure class="work"><div class="thumb"><img src="brand1.png" alt="Project image"></div><figcaption>Branding</figcaption></figure>
+          <figure class="work"><div class="thumb"><img src="T-shirt.webp" alt="Project image"></div><figcaption>T-shirt Mock-up</figcaption></figure>
+          <figure class="work"><div class="thumb"><img src="20260916_044347.jpg" alt="Project image"></div><figcaption>Church Flyer</figcaption></figure>
+          <figure class="work"><div class="thumb"><img src="Screenshot_20261015-215859.png" alt="Project image"></div><figcaption>Admission Assistant</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section navy">
+      <div class="wrap">
+        <h2>What Heritage Solution offers</h2>
+        <ul class="services">
+          <li><strong>Design and branding</strong> Logos, brand guides and print materials.</li>
+          <li><strong>Web development</strong> Websites and web apps coded from scratch.</li>
+          <li><strong>Digital solutions</strong> Systems that make everyday work easier.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CV -->
+    <section id="cv" class="section">
+      <div class="wrap">
+        <h2>Curriculum vitae</h2>
+        <!-- TODO: fill in your real details -->
+        <dl class="cv">
+          <dt>Education</dt>
+          <dd>HND, Software and Web Development, Federal Polytechnic Ado-Ekiti (in progress)</dd>
+          <dt>Experience</dt>
+          <dd>Founder and CEO, Heritage Solution</dd>
+          <dt>Tools</dt>
+          <dd>VS Code, CorelDRAW, Python, CVAT, Microsoft Office, Git</dd>
+        </dl>
+        <!-- TODO: put your CV in the project folder and keep this file name -->
+        <a href="my_CV.pdf" class="btn btn-navy" download>Download my CV</a>
+      </div>
+    </section>
+
+    <!-- APP DOWNLOAD (activate when the farm app is ready) -->
+    <section id="app" class="section alt">
+      <div class="wrap">
+        <h2>Farm monitoring app</h2>
+        <p>An app for tracking farms and daily field reports, built as part of my coursework. The download link will be here when it's ready.</p>
+        <a class="btn btn-line-dark disabled" aria-disabled="true">Coming soon</a>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="wrap">
+        <h2>Let's work together</h2>
+        <p>Have a project in mind? Send a message and I'll reply as soon as I can.</p>
+        <ul class="contact-list">
+          <!-- TODO: replace with your real details -->
+          <li><a href="mailto:heritagesamson3@gmail.com">heritagesamson3@gmail.com</a></li>
+          <li><a href="https://wa.me/2347025703909">WhatsApp</a></li>
+          <li><a href="https://www.facebook.com/share/191cZJJWFY/">Facebook</a></li>
+          <li><a href="https://www.instagram.com/heritage_sam?psln=OWZ0ODQ5dWN3bnJ0">Instagram</a></li>
+          <li><a href="https://tiktok.com/@heritage_sam">TikTok</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Heritage Solution. Innovate. Design. Deliver.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+/* ===== Brand tokens (from the Heritage Solution brand sheet) ===== */
+:root {
+  --navy: #14213D;
+  --silver: #D9DCE3;
+  --gold: #C6A15B;
+  --white: #FFFFFF;
+  --ink: #1b2236;
+  --muted: #566078;
+  --radius: 14px;
+}
+
+/* ===== Base ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 110px; }
+body {
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--white);
+}
+a { color: inherit; }
+h1, h2, h3 { font-weight: 800; line-height: 1.15; color: var(--navy); }
+h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); margin-bottom: 1rem; }
+h3 { font-size: 1.1rem; margin-bottom: .4rem; }
+p { max-width: 62ch; margin-bottom: 1rem; }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+.wrap { width: min(1080px, 100% - 2.5rem); margin-inline: auto; }
+.section { padding: 5rem 0; }
+.alt { background: #f3f4f7; }
+.navy { background: var(--navy); }
+.navy h2 { color: var(--white); }
+.lead { color: var(--muted); }
+
+/* ===== Header ===== */
+.site-header {
+  position: fixed; inset: 0 0 auto 0; z-index: 10;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .9rem 1.25rem;
+  background: var(--navy); color: var(--white);
+}
+.brand { display: flex; align-items: center; gap: .6rem; font-weight: 800; text-decoration: none; }
+.brand img {
+  height: 80px;
+  width: auto;
+  background: var(--white);
+  padding: 5px 12px;
+  border-radius: 10px;
+  display: block;
+}
+.nav { display: flex; gap: 1.4rem; align-items: center; }
+.nav a { text-decoration: none; font-weight: 600; font-size: .92rem; }
+.nav a:hover { color: var(--gold); }
+.nav .nav-cta { background: var(--gold); color: var(--navy); padding: .5rem 1rem; border-radius: 999px; }
+.nav .nav-cta:hover { color: var(--navy); filter: brightness(1.08); }
+.menu-btn { display: none; }
+
+/* ===== Hero ===== */
+.hero {
+  min-height: 100svh;
+  display: grid; grid-template-columns: 1.2fr .8fr; align-items: center; gap: 2rem;
+  padding: 7rem max(1.25rem, calc((100% - 1080px) / 2)) 4rem;
+  background: var(--navy); color: var(--white);
+  overflow: hidden;
+}
+.hero h1 { color: var(--white); font-size: clamp(2.4rem, 6.5vw, 4.4rem); margin-bottom: 1.25rem; }
+.hero p { color: var(--silver); font-size: 1.1rem; }
+.actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.5rem; }
+
+.rotator { color: var(--gold); }
+.rotator::after {
+  content: "";
+  display: inline-block;
+  width: 3px; height: .9em;
+  margin-left: 6px;
+  background: var(--gold);
+  vertical-align: -0.05em;
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+.hero { position: relative; }
+.hero-text, .hero-art { position: relative; z-index: 1; }
+
+.bg-shapes span {
+  position: absolute;
+  border: 2px solid rgba(217, 220, 227, .12);
+  border-radius: 24px;
+  animation: drift 20s ease-in-out infinite;
+}
+.bg-shapes span:nth-child(1) { width: 120px; height: 120px; left: 8%;  top: 20%; }
+.bg-shapes span:nth-child(2) { width: 70px;  height: 70px;  left: 45%; top: 72%; animation-duration: 26s; }
+.bg-shapes span:nth-child(3) { width: 180px; height: 180px; right: 28%; top: 8%; border-color: rgba(198,161,91,.18); animation-duration: 32s; }
+.bg-shapes span:nth-child(4) { width: 50px;  height: 50px;  left: 25%; bottom: 10%; animation-direction: reverse; }
+.bg-shapes span:nth-child(5) { width: 100px; height: 100px; right: 5%; bottom: 18%; animation-duration: 28s; }
+
+@keyframes drift {
+  0%   { transform: translateY(0) rotate(45deg); }
+  50%  { transform: translateY(-40px) rotate(225deg); }
+  100% { transform: translateY(0) rotate(405deg); }
+}
+
+/* The one memorable thing: the HS tiles from the logo, drawn in CSS */
+.hero-art { position: relative; height: 340px; }
+.tile {
+  position: absolute; width: 190px; height: 190px; border-radius: 34px;
+  display: grid; place-items: center;
+  font-weight: 800; font-size: 5.5rem; transform: rotate(45deg);
+  box-shadow: 0 18px 40px rgba(0,0,0,.35);
+}
+.tile::first-line { line-height: 1; }
+.tile-silver { background: var(--silver); color: var(--navy); left: 5%; top: 0; }
+.tile-navy { background: #0c1630; color: var(--silver); right: 5%; bottom: 0; border: 2px solid var(--gold); }
+
+.tile-silver { animation: float 6s ease-in-out infinite; }
+.tile-navy   { animation: float 7s ease-in-out -2s infinite reverse, glow 3s ease-in-out infinite; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(45deg); }
+  50%      { transform: translateY(-20px) rotate(52deg); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 18px 40px rgba(0,0,0,.35), 0 0 0 rgba(198,161,91,0); }
+  50%      { box-shadow: 0 18px 40px rgba(0,0,0,.35), 0 0 30px rgba(198,161,91,.55); }
+}
+.tile span { transform: rotate(-45deg); }
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-block; padding: .85rem 1.6rem; border-radius: 999px;
+  font-weight: 600; text-decoration: none; border: 2px solid transparent;
+  transition: transform .15s ease, filter .15s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-gold { background: var(--gold); color: var(--navy); }
+.btn-line { border-color: var(--silver); color: var(--white); }
+.btn-navy { background: var(--navy); color: var(--white); }
+.btn-line-dark { border-color: var(--navy); color: var(--navy); }
+.disabled { opacity: .6; pointer-events: none; }
+
+/* ===== About ===== */
+.two-col { display: grid; grid-template-columns: 320px 1fr; gap: 3rem; align-items: center; }
+.photo, .thumb {
+  display: grid; place-items: center; color: var(--muted); font-size: .9rem;
+  background: var(--silver); border-radius: var(--radius);
+}
+.photo {
+  overflow: hidden;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+/* ===== Skills ===== */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
+.card { background: var(--white); padding: 1.6rem; border-radius: var(--radius); border-left: 5px solid var(--gold); }
+.card p { margin: 0; color: var(--muted); }
+
+/* ===== Work ===== */
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 1.5rem; }
+.thumb { aspect-ratio: 4 / 3; }
+.work figcaption { margin-top: .6rem; font-weight: 600; font-size: .95rem; }
+
+.gallery {
+  overflow: hidden;
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+/* ===== Services ===== */
+.services { list-style: none; display: grid; gap: 1rem; margin-top: 1.5rem; }
+.services li { color: var(--silver); padding: 1.2rem 0; border-top: 1px solid rgba(217,220,227,.25); }
+.services strong { display: block; color: var(--gold); font-size: 1.15rem; margin-bottom: .2rem; }
+
+/* ===== CV ===== */
+.cv { margin: 1.5rem 0 2rem; max-width: 62ch; }
+.cv dt { font-weight: 800; color: var(--navy); margin-top: 1rem; }
+.cv dd { color: var(--muted); }
+
+/* ===== Contact ===== */
+.contact-list { list-style: none; display: flex; flex-wrap: wrap; gap: .8rem 2rem; margin-top: 1rem; }
+.contact-list a { font-weight: 600; text-decoration-color: var(--gold); text-underline-offset: 4px; }
+
+/* ===== Footer ===== */
+.site-footer { background: var(--navy); color: var(--silver); text-align: center; padding: 1.6rem 1rem; font-size: .9rem; }
+.site-footer p { margin: 0 auto; }
+
+/* ===== Mobile ===== */
+@media (max-width: 800px) {
+  .menu-btn {
+    display: block; background: none; border: 2px solid var(--silver);
+    color: var(--white); padding: .35rem .9rem; border-radius: 999px;
+    font: 600 .9rem "Montserrat", sans-serif; cursor: pointer;
+  }
+  .nav {
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; align-items: flex-start; gap: 1rem;
+    padding: 1.25rem; background: var(--navy);
+  }
+  .nav.open { display: flex; }
+  .hero { grid-template-columns: 1fr; padding-top: 6rem; }
+  .hero-art { height: 260px; order: -1; }
+  .tile { width: 130px; height: 130px; font-size: 3.6rem; border-radius: 24px; }
+  .two-col, .grid, .gallery { grid-template-columns: 1fr; }
+  .photo { max-width: 260px; }
+  .section { padding: 3.5rem 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn { transition: none; }
+}
